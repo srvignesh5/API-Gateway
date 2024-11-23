@@ -1,0 +1,5 @@
+@API_Gateway_HostAddress= https://localhost:5000
+
+Accept: application/json
+
+###

@@ -1,0 +1,124 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/Auth/{everything}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        { "Host": "localhost", "Port": 5001 }
+      ],
+      "UpstreamPathTemplate": "/api/Auth/{everything}",
+      "UpstreamHttpMethod": [ "POST" ],
+      "RateLimitOptions": {
+        "Period": "1m",      
+        "Limit": 100           
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/User/{everything}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        { "Host": "localhost", "Port": 5001 }
+      ],
+      "UpstreamPathTemplate": "/api/User/{everything}",
+      "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ],
+      "RateLimitOptions": {
+        "Period": "1m",      
+        "Limit": 50          
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/User",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        { "Host": "localhost", "Port": 5001 }
+      ],
+      "UpstreamPathTemplate": "/api/User",
+      "UpstreamHttpMethod": [ "GET" ],
+      "RateLimitOptions": {
+        "Period": "1m",         
+        "Limit": 200       
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/Booking/{everything}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        { "Host": "localhost", "Port": 5002 }
+      ],
+      "UpstreamPathTemplate": "/api/Booking/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      "RateLimitOptions": {
+        "Period": "1m",    
+        "Limit": 50         
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/Booking",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        { "Host": "localhost", "Port": 5002 }
+      ],
+      "UpstreamPathTemplate": "/api/Booking",
+      "UpstreamHttpMethod": [ "GET", "POST" ],
+      "RateLimitOptions": {
+        "Period": "1m",     
+        "Limit": 200         
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/Passenger/{everything}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        { "Host": "localhost", "Port": 5002 }
+      ],
+      "UpstreamPathTemplate": "/api/Passenger/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      "RateLimitOptions": {
+        "Period": "1m",      
+        "Limit": 50            
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/Passenger",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        { "Host": "localhost", "Port": 5002 }
+      ],
+      "UpstreamPathTemplate": "/api/Passenger",
+      "UpstreamHttpMethod": [ "GET", "POST" ],
+      "RateLimitOptions": {
+        "Period": "1m",    
+        "Limit": 200          
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/Flight/{everything}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        { "Host": "localhost", "Port": 5003 }
+      ],
+      "UpstreamPathTemplate": "/api/Flight/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      "RateLimitOptions": {
+        "Period": "1m",       
+        "Limit": 50         
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/Flight",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        { "Host": "localhost", "Port": 5003 }
+      ],
+      "UpstreamPathTemplate": "/api/Flight",
+      "UpstreamHttpMethod": [ "GET", "POST" ],
+      "RateLimitOptions": {
+        "Period": "1m",       
+        "Limit": 200           
+      }
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "https://localhost:5000"
+  }
+}
